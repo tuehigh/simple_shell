@@ -41,13 +41,8 @@ ret = malloc(sizeof(char) * (length + 1));
 
 if (!ret)
 return (NULL);
-
-for (i = 0; i < length; i++)
-{
-ret[i] = str[i];
-}
-
-ret[length] = 0;
+for (length++; length--;)
+ret[length] = *--str;
 return (ret);
 }
 
