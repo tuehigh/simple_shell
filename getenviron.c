@@ -1,52 +1,52 @@
 #include "shell.h"
 
 /**
-* get_environ - returns the string array copy of our environ
-* @info: Structure containing potential arguments. Used to maintain
+* get_environ - returns string array duplicate of our environment
+* @ourInformation: contains potential arguments. Used to maintain
 *          constant function prototype.
 * Return: Always 0
 */
-char **get_environ(info_t *info)
+char **get_environ(info_t *ourInformation)
 {
-if (!info->environ || info->env_changed)
+if (!ourInformation->environ || ourInformation->env_changed)
 {
-info->environ = list_to_strings(info->env);
-info->env_changed = 0;
+ourInformation->environ = list_to_strings(ourInformation->env);
+ourInformation->env_changed = 0;
 }
 
-return (info->environ);
+return (ourInformation->environ);
 }
 
 /**
 * _unsetenv - Remove an environment variable
-* @info: Structure containing potential arguments. Used to maintain
+* @ourInformation: Structure containing potential arguments. Used to maintain
 *        constant function prototype.
 *  Return: 1 on delete, 0 otherwise
-* @var: the string env var property
+* @theVariable: the string env var property
 */
-int _unsetenv(info_t *info, char *var)
+int _unsetenv(info_t *ourInformation, char *theVariable)
 {
-list_t *node = info->env;
-size_t i = 0;
-char *p;
+list_t *the_node = ourInformation->env;
+size_t u = 0;
+char *o;
 
-if (!node || !var)
+if (!the_node || !theVariable)
 return (0);
 
-while (node)
+while (the_node)
 {
-p = starts_with(node->str, var);
-if (p && *p == '=')
+o = starts_with(the_node->str, theVariable);
+if (o && *o == '=')
 {
 info->env_changed = delete_node_at_index(&(info->env), i);
 i = 0;
-node = info->env;
+node = ourInformation->env;
 continue;
 }
-node = node->next;
-i++;
+the_node = the_node->next;
+u++;
 }
-return (info->env_changed);
+return (ourInformation->env_changed);
 }
 
 /**
@@ -58,37 +58,36 @@ return (info->env_changed);
 * @value: the string env var value
 *  Return: Always 0
 */
-int _setenv(info_t *info, char *var, char *value)
+int _setenv(info_t *ourInformation, char *theVariable, char *our_value)
 {
-char *buf = NULL;
-list_t *node;
-char *p;
+char *the_buff = NULL;
+list_t *the_node;
+char *o;
 
-if (!var || !value)
+if (!theVariable || !our_value)
 return (0);
 
-buf = malloc(_strlen(var) + _strlen(value) + 2);
-if (!buf)
+the_buff = malloc(_strlen(theVariable) + _strlen(our_value) + 2);
+if (!the_buff)
 return (1);
-_strcpy(buf, var);
-_strcat(buf, "=");
-_strcat(buf, value);
-node = info->env;
-while (node)
+_strcpy(the_buff, theVariable);
+_strcat(the_buff, "=");
+_strcat(the_buff, our_value);
+the_node = ourInformation->env;
+while (the_node)
 {
-p = starts_with(node->str, var);
-if (p && *p == '=')
+o = starts_with(the_node->str, theVariable);
+if (o && *o == '=')
 {
-free(node->str);
-node->str = buf;
-info->env_changed = 1;
+free(the_node->str);
+the_node->str = the_buff;
+ourInformation->env_changed = 1;
 return (0);
 }
-node = node->next;
+the_node = the_node->next;
 }
-add_node_end(&(info->env), buf, 0);
-free(buf);
-info->env_changed = 1;
+add_node_end(&(ourInformation->env), the_buff, 0);
+free(the_buff);
+ourInformation->env_changed = 1;
 return (0);
 }
-
