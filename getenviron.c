@@ -38,9 +38,9 @@ while (the_node)
 o = starts_with(the_node->str, theVariable);
 if (o && *o == '=')
 {
-info->env_changed = delete_node_at_index(&(info->env), i);
-i = 0;
-node = ourInformation->env;
+ourInformation->env_changed = delete_node_at_index(&(ourInformation->env), u);
+u = 0;
+the_node = ourInformation->env;
 continue;
 }
 the_node = the_node->next;
