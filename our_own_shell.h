@@ -38,12 +38,12 @@ extern char **environ;
 
 
 /**
- * struct liststr - the singly linked list
+ * struct listString - the singly linked list
  * @num: the number field
  * @str: a string of the struct
  * @next: points to the next node
  */
-typedef struct liststr
+typedef struct listString
 {
 	int num;
 	char *str;
@@ -51,7 +51,7 @@ typedef struct liststr
 } list_t;
 
 /**
- * struct passinfo - Struct for passing various arguments to functions
+ * struct passInformation - Struct for passing various arguments to functions
  * @arg: A string containing arguments generated from getline
  * @argv: An array of strings generated from arg
  * @path: A string representing the current command's path
@@ -72,7 +72,7 @@ typedef struct liststr
  * @histcount: History line number count
  */
 
-typedef struct passinfo
+typedef struct passInformation
 {
 	char *arg;
 	char **argv;
@@ -135,6 +135,8 @@ int _putsfd(char *str, int fd);
 int _strlen(char *);
 int _strcmp(char *, char *);
 char *starts_with(const char *, const char *);
+
+/* functions_of_stringHandling1.c */
 char *_strcat(char *, char *);
 char *_strcpy(char *, char *);
 char *_strdup(const char *);
@@ -195,6 +197,7 @@ int _mysetenv(info_t *);
 int _myunsetenv(info_t *);
 int populate_env_list(info_t *);
 
+/* functions_of_ourShellEnvironments1.c */
 char **get_environ(info_t *);
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
@@ -212,6 +215,8 @@ list_t *add_node_end(list_t **, const char *, int);
 size_t print_list_str(const list_t *);
 int delete_node_at_index(list_t **, unsigned int);
 void free_list(list_t **);
+
+/* functions_of_listHandling1.c */
 size_t list_len(const list_t *);
 char **list_to_strings(list_t *);
 size_t print_list(const list_t *);

@@ -31,7 +31,8 @@ char *_strncpy(char *dst, char *src, int n)
 }
 
 /**
-* _strncat -function that concatenate two strings, limiting the number of characters.
+* _strncat -function that concatenate two strings,
+*       limiting the number of characters.
 * @dst: Destination string.
 * @src: Source string.
 * @n: Maximum number of characters to append.
