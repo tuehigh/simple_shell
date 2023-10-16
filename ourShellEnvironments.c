@@ -39,7 +39,7 @@ char *_getenv(info_t *info, const char *name)
 * _mysetenv -function Set or modify an environment variable.
 * @info: Structure containing potential arguments and environment information.
 *        Used to maintain a consistent function prototype.
-* Return: 0 on success,
+* Return: 0 on successfull
 * return 1 if the operation fails (e.g., incorrect number of arguments).
 */
 int _mysetenv(info_t *info)
