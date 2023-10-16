@@ -38,12 +38,12 @@ extern char **environ;
 
 
 /**
- * struct listString - the singly linked list
+ * struct liststr - the singly linked list
  * @num: the number field
  * @str: a string of the struct
  * @next: points to the next node
  */
-typedef struct listString
+typedef struct liststr
 {
 	int num;
 	char *str;
@@ -51,7 +51,7 @@ typedef struct listString
 } list_t;
 
 /**
- * struct passInformation - Struct for passing various arguments to functions
+ * struct passinfo - Struct for passing various arguments to functions
  * @arg: A string containing arguments generated from getline
  * @argv: An array of strings generated from arg
  * @path: A string representing the current command's path
@@ -72,7 +72,7 @@ typedef struct listString
  * @histcount: History line number count
  */
 
-typedef struct passInformation
+typedef struct passinfo
 {
 	char *arg;
 	char **argv;
