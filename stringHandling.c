@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * _strlen - function to return the length of a string
@@ -80,7 +80,7 @@ for (; *source; destination++, source++)
 return (result);
 }
 
-#include "shell.h"
+#include "our_own_shell.h"
 /**
 * _strcpy - function to copies a string
 * @dst: the destination

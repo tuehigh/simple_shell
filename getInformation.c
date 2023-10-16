@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * input_buf -finction to handles buffering chained commands.
@@ -153,7 +153,7 @@ _puts("$ ");
 _putchar(BUF_FLUSH);
 }
 
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * clear_info - function that initializes info_t struct.

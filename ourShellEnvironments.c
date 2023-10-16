@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * _myenv -function to Print the current environment variables.
@@ -98,7 +98,7 @@ int populate_env_list(info_t *info)
 	return (0);
 }
 
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * get_environ - returns string array duplicate of our environment

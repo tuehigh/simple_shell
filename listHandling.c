@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * add_node - function that adds a node to the start of the list
@@ -159,7 +159,7 @@ void free_list(list_t **head)
 	*head = NULL;
 }
 
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * list_len - function that determines length of linked list

@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * _eputs - function to Print an input
@@ -102,7 +102,7 @@ int _putsfd(char *input_string, int file_descriptor)
 	}
 	return (chars_written);
 }
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * _erratoi -function that converts a string to an integer

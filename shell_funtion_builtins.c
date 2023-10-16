@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * _myexit -function to exits the shell
@@ -93,7 +93,7 @@ _puts(*arg_array);
 return (0);
 }
 
-#include "shell.h"
+#include "our_own_shell.h"
 
 /**
 * _myhistory - function to displays the
