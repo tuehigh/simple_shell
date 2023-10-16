@@ -1,7 +1,7 @@
 #include "our_own_shell.h"
 
 /**
-* _strncpy - Copy part of a string.
+* _strncpy -function to Copy part of a string.
 * @dst: Destination string.
 * @src: Source string.
 * @n: Maximum number of characters to copy.
@@ -14,14 +14,15 @@ char *_strncpy(char *dst, char *src, int n)
 {
 	int si = 0;
 	char *result = dst;
+	int di, fi;
 
-	for (int di = 0; src[si] != '\0' && si < n - 1; si++, di++)
+	for (di = 0; src[si] != '\0' && si < n - 1; si++, di++)
 	{
 		dst[di] = src[si];
 	}
 	if (si < n)
 	{
-		for (int fi = si; fi < n; fi++)
+		for (fi = si; fi < n; fi++)
 		{
 			dst[fi] = '\0';
 		}
@@ -30,7 +31,7 @@ char *_strncpy(char *dst, char *src, int n)
 }
 
 /**
-* _strncat - Concatenate two strings, limiting the number of characters.
+* _strncat -function that concatenate two strings, limiting the number of characters.
 * @dst: Destination string.
 * @src: Source string.
 * @n: Maximum number of characters to append.
@@ -59,7 +60,7 @@ char *_strncat(char *dst, char *src, int n)
 }
 
 /**
-* _strchr - Find the first occurrence of a character in a string.
+* _strchr -function to find the first occurrence of a character in a string.
 * @str: Input string for searching.
 * @c: Character to locate.
 *
