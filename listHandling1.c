@@ -27,7 +27,7 @@ char **list_to_strings(list_t *head)
 	size_t count = list_len(head);
 	char **strings;
 	char *str;
-	size_t i,j;
+	size_t i, j;
 
 	if (!head || !count)
 		return (NULL);
