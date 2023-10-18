@@ -27,18 +27,19 @@ char **list_to_strings(list_t *head)
 	size_t count = list_len(head);
 	char **strings;
 	char *str;
+	size_t i,j;
 
 	if (!head || !count)
 		return (NULL);
 	strings = malloc(sizeof(char *) * (count + 1));
 	if (!strings)
 		return (NULL);
-	for (size_t i = 0; node; node = node->next, i++)
+	for (i = 0; node; node = node->next, i++)
 	{
 		str = malloc(_strlen(node->str) + 1);
 		if (!str)
 		{
-			for (size_t j = 0; j < i; j++)
+			for (j = 0; j < i; j++)
 				free(strings[j]);
 			free(strings);
 			return (NULL);

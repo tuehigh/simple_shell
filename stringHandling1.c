@@ -8,10 +8,12 @@
 */
 char *_strcpy(char *dst, char *src)
 {
+int i;
+
 if (dst == src || src == 0)
 return (dst);
 
-for (int i = 0; src[i]; i++)
+for (i = 0; src[i]; i++)
 {
 dst[i] = src[i];
 }
@@ -30,7 +32,6 @@ char *_strdup(const char *str)
 {
 char *ret;
 unsigned int length = 0;
-int i;
 
 if (str == NULL)
 return (NULL);
@@ -53,10 +54,12 @@ return (ret);
 */
 void _puts(char *str)
 {
+int i;
+
 if (!str)
 return;
 
-for (int i = 0; str[i] != '\0'; i++)
+for (i = 0; str[i] != '\0'; i++)
 {
 _putchar(str[i]);
 }

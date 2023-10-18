@@ -12,9 +12,11 @@
 */
 void _eputs(char *input_string)
 {
+	int index;
+
 	if (!input_string)
 		return;
-	for (int index = 0; input_string[index] != '\0'; index++)
+	for (index = 0; input_string[index] != '\0'; index++)
 	{
 		_eputchar(input_string[index]);
 	}
@@ -93,10 +95,11 @@ int _putfd(char character, int file_descriptor)
 int _putsfd(char *input_string, int file_descriptor)
 {
 	int chars_written = 0;
+	int index;
 
 	if (!input_string)
 		return (0);
-	for (int index = 0; input_string[index] != '\0'; index++)
+	for (index = 0; input_string[index] != '\0'; index++)
 	{
 		chars_written += _putfd(input_string[index], file_descriptor);
 	}
